@@ -22,7 +22,7 @@
                                   data-doctor-id="{{ $doctor->id }}">
                                 @csrf
                                 <input type="hidden" name="date" value="{{ $dateString }}">
-                                <input type="hidden" name="patient_name" value="{{ Auth()->user()->email }}">
+                                <input type="hidden" name="patient_name" value="{{ Auth()->user()->email  ?? 'не указано'}}">
                                 <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
 
                                 @php

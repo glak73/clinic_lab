@@ -4,9 +4,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PDFController;
 
 use Illuminate\Support\Facades\Route;
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/pdf/appointments', [PDFController::class, 'generateAppointmentsPDF'])
+        ->name('pdf.appointments');
+});
 Route::middleware(['auth'])->group(function () {
     Route::post('/doctors/{id}/comments', [DoctorController::class, 'storeComment'])
         ->name('doctors.comments.store');

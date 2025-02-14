@@ -6,6 +6,12 @@ use Carbon\Carbon;
 @endphp
 
 <div class="container">
+    <div class="pdf-export">
+        <a href="{{ route('pdf.appointments') }}"
+           class="btn btn-primary">
+            Скачать PDF с записями
+        </a>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
